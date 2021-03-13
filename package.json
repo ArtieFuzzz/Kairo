@@ -29,8 +29,10 @@
     "eslint": "^7.22.0"
   },
   "scripts": {
-    "start": "node src/main",
-    "lint": "eslint ."
+    "start": "node src/index.js",
+    "lint": "eslint .",
+    "contributors:add": "all-contributors add",
+    "contributors:generate": "all-contributors generate"
   },
   "author": "ArtieFuzzz#8298",
   "license": "GPL-3.0",
