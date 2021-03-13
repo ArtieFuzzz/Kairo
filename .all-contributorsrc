@@ -1,0 +1,33 @@
+{
+  "projectName": "Sparrow",
+  "projectOwner": "ArtieFuzzz",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "commitConvention": "none",
+  "contributors": [
+    {
+      "login": "allcontributors",
+      "name": "allcontributors[bot]",
+      "avatar_url": "https://avatars.githubusercontent.com/u/46843839?v=4",
+      "profile": "https://github.com/all-contributors/all-contributors-bot",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "depfu",
+      "name": "Depfu",
+      "avatar_url": "https://avatars.githubusercontent.com/u/21121772?v=4",
+      "profile": "https://depfu.com/",
+      "contributions": [
+        "maintenance"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}
