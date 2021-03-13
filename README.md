@@ -12,6 +12,3 @@ Step 3: All set! Now just run <code>npm start</code> or <code>node src/main</cod
 
 # Issues or bugs
 Open an issue and describe the bug / issue
-
-# Credits
-N/A
