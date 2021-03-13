@@ -2,6 +2,7 @@
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
+# Moved to [GitLab](https://gitlab.com/raven-studio/Sparrow)
 
 Open source discord bot made with [discord-akairo](https://discord-akairo.github.io)
 
