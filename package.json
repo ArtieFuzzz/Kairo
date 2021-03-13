@@ -25,6 +25,7 @@
     "yiff": "^2.0.3"
   },
   "devDependencies": {
+    "all-contributors-cli": "^6.20.0",
     "eslint": "^7.22.0"
   },
   "scripts": {
