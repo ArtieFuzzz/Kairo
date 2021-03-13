@@ -18,6 +18,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "depfu",
+      "name": "Depfu",
+      "avatar_url": "https://avatars.githubusercontent.com/u/21121772?v=4",
+      "profile": "https://depfu.com/",
+      "contributions": [
+        "maintenance"
+      ]
     }
   ],
   "contributorsPerLine": 7
