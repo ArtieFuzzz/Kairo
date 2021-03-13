@@ -1,6 +1,5 @@
 # Sparrow
 [![Discord Bots](https://top.gg/api/widget/609269728455688193.svg)](https://top.gg/bot/609269728455688193)
-# Moved to [GitLab](https://gitlab.com/snowcabin-studio/Sparrow)
 
 Open source discord bot made with [discord-akairo](https://discord-akairo.github.io)
 
