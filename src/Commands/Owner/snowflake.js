@@ -1,5 +1,7 @@
+/* eslint-disable no-undef */
 const { Command } = require('discord-akairo');
-const snowflakey = require('snowflakey');
+const { DiscordSnowflake } = require('@sapphire/snowflake');
+const { MessageEmbed } = require('discord.js');
 
 class SnowFlakeCommand extends Command {
 
@@ -10,31 +12,49 @@ class SnowFlakeCommand extends Command {
 			description: {
 				usage: 'snowflake',
 				examples: ['snowflake', 'genflake', 'gensnowflake'],
-				description: 'Generates a snowflake (Not a discord snowflake).',
+				description: 'Generates a discord snowflake (Not a real discord snowflake but can deconstruct one).',
 			},
 			ownerOnly: true,
+			args: [
+				{
+					id: 'snowflake',
+					type: 'string',
+					match: 'content',
+				} ],
 		});
 	}
 
-	async exec(message) {
-		const Worker = new snowflakey.Worker({
-			name: 'Sparrow',
+	async exec(message, args) {
+		if (!args.snowflake) {
+			const snowflake = DiscordSnowflake.generate();
+			const flake = DiscordSnowflake.deconstruct(snowflake);
 
-			// Discord Epoch
-			epoch: 1420070400000,
-			workerId: process.env.CLUSTER_ID || 31,
-			// eslint-disable-next-line no-undefined
-			processId: process.pid || undefined,
-			workerBits: 8,
-			processBits: 0,
-			incrementBits: 14,
-		});
-		try {
-			const flake = Worker.generate();
-			message.channel.send(`Created Snowflake ${flake}\nCreation Date: ${snowflakey.lookup(flake, Worker.options.epoch)}\nDeconstructed: ${Worker.deconstruct(flake).timestamp.valueOf()}`);
+			const embed = new MessageEmbed()
+				.setTitle('SnowFlake Generated!')
+				.addFields(
+					{ name: 'SnowFlake', value: flake.id },
+					{ name: 'Timestamp', value: flake.timestamp },
+					{ name: 'WorkerID', value: flake.workerID },
+					{ name: 'ProcessID', value: flake.processID },
+					{ name: 'Epoch', value: flake.epoch },
+				)
+				.setFooter('Use this to convert your Timestamp: https://www.epochconverter.com/');
+			return message.channel.send(embed);
 		}
-		catch (err) {
-			return message.channel.send(err.message);
+		else if (args.snowflake) {
+			const flake = DiscordSnowflake.deconstruct(args.snowflake);
+
+			const embed = new MessageEmbed()
+				.setTitle('SnowFlake Deconstructed!')
+				.addFields(
+					{ name: 'SnowFlake', value: flake.id },
+					{ name: 'Timestamp', value: flake.timestamp },
+					{ name: 'WorkerID', value: flake.workerID },
+					{ name: 'ProcessID', value: flake.processID },
+					{ name: 'Epoch', value: flake.epoch },
+				)
+				.setFooter('Use this to convert your Timestamp: https://www.epochconverter.com/');
+			message.channel.send(embed);
 		}
 	}
 

@@ -40,21 +40,21 @@ class EvalCommand extends Command {
 		else {
 			try {
 				// eslint-disable-next-line no-eval
-				const evald = eval(query);
 				const time = stopwatch.toString();
+				const evald = eval(query);
 				const res = typeof evald === 'string' ? evald : inspect(evald, { depth: 0 });
 
 				embed.addField('Result', code('js', res));
 
 
 				stopwatch.stop();
+				embed.addField('Time ⏱', time);
 				if (!Boolean(res) || !Boolean(evald) && evald !== 0) {
 					embed.setColor('RED');
 				}
 				else {
 					embed
 						.addField('Type', code('css', typeof evald))
-						.addField('Time ⏱', time)
 						.setColor('GREEN');
 				}
 			}
