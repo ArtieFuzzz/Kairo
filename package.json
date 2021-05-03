@@ -8,7 +8,7 @@
     "@codedipper/random-code": "^2.1.2",
     "@ksoft/api": "^3.1.9",
     "@sapphire/snowflake": "^1.2.5",
-    "@sapphire/stopwatch": "^1.0.5",
+    "@sapphire/stopwatch": "^1.1.1",
     "chalk": "^4.1.0",
     "dayjs": "^1.10.4",
     "discord-akairo": "^8.1.0",
